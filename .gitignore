@@ -1,0 +1,43 @@
+# Rider project files
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# Build results
+bin/
+obj/
+out/
+
+# Avalonia designer cache
+.avalonia/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages and related files
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
+
+# Others
+*.db
+*.sqlite
+*.swp
+*.tmp
