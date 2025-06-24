@@ -7,5 +7,4 @@
              x:DataType="vm:FavouritesViewModel"
              x:Class="PasswordManager.Views.FavouritesView">
     
-    <Label Content="{Binding Test}"></Label>
 </UserControl>

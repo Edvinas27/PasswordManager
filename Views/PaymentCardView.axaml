@@ -6,5 +6,4 @@
              xmlns:vm="clr-namespace:PasswordManager.ViewModels"
                 x:DataType="vm:PaymentCardViewModel"
              x:Class="PasswordManager.Views.PaymentCardView">
-    <Label Content="{Binding Test}"></Label>
 </UserControl>

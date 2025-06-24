@@ -3,20 +3,24 @@ using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PasswordManager.Data;
+using PasswordManager.Factories;
 using PasswordManager.Helpers;
 
 namespace PasswordManager.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
+    private readonly PageFactory _pageFactory;
+    
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(MainImage))]
     [NotifyPropertyChangedFor(nameof(MainImageWidth))]
     private bool _sideMenuExpanded = true;
 
-    public bool FavouriteIsActive => CurrentPage == _favourites;
-    public bool PasswordsIsActive => CurrentPage == _passwords;
-    public bool PaymentCardsIsActive => CurrentPage == _paymentCard;
+    public bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
+    public bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
+    public bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
 
 
     public int MainImageWidth => SideMenuExpanded ? 180 : 40;
@@ -25,15 +29,12 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(FavouriteIsActive))]
     [NotifyPropertyChangedFor(nameof(PasswordsIsActive))]
     [NotifyPropertyChangedFor(nameof(PaymentCardsIsActive))]
-    private ViewModelBase _currentPage;
-
-    private readonly FavouritesViewModel _favourites = new();
-    private readonly PasswordsViewModel _passwords = new();
-    private readonly PaymentCardViewModel _paymentCard = new();
+    private PageViewModel _currentPage;
     
-    public MainViewModel()
+    public MainViewModel(PageFactory pageFactory)
     {
-        CurrentPage = _favourites;
+        _pageFactory = pageFactory;
+        GoToFavouritesPage();
     }
     
     public Bitmap MainImage =>
@@ -45,11 +46,11 @@ public partial class MainViewModel : ViewModelBase
     private void SideMenuResize() => SideMenuExpanded = !SideMenuExpanded;
 
     [RelayCommand]
-    public void GoToFavouritesPage() => CurrentPage = _favourites;
+    public void GoToFavouritesPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Favourites);
     
     [RelayCommand]
-    public void GoToPasswordPage() => CurrentPage = _passwords;
-    
+    public void GoToPasswordPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Passwords);
+
     [RelayCommand]
-    public void GoToPaymentCardPage() => CurrentPage = _paymentCard;
+    public void GoToPaymentCardPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.PaymentCards);
 }

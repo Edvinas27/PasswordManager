@@ -1,6 +1,11 @@
+using PasswordManager.Data;
+
 namespace PasswordManager.ViewModels;
 
-public partial class FavouritesViewModel : ViewModelBase
+public partial class FavouritesViewModel : PageViewModel
 {
-    public string Test { get; set; } = "Favourites";
+    public FavouritesViewModel()
+    {
+        PageName = ApplicationPageNames.Favourites;
+    }
 }   

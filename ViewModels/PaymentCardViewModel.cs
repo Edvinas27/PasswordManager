@@ -1,6 +1,11 @@
+using PasswordManager.Data;
+
 namespace PasswordManager.ViewModels;
 
-public class PaymentCardViewModel : ViewModelBase
+public class PaymentCardViewModel : PageViewModel
 {
-    public string Test { get; set;} = "PaymentCard"; 
+    public PaymentCardViewModel()
+    {
+        PageName = ApplicationPageNames.PaymentCards;
+    }
 }

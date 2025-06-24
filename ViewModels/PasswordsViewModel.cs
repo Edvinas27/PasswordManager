@@ -1,6 +1,11 @@
+using PasswordManager.Data;
+
 namespace PasswordManager.ViewModels;
 
-public class PasswordsViewModel : ViewModelBase
+public class PasswordsViewModel : PageViewModel
 {
-    public string Test { get; set; } = "Password";
+    public PasswordsViewModel()
+    {
+        PageName = ApplicationPageNames.Passwords;
+    }
 }
