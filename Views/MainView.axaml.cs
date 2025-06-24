@@ -1,8 +1,9 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using PasswordManager.ViewModels;
 
-namespace PasswordManager;
+namespace PasswordManager.Views;
 
 public partial class MainView : Window
 {

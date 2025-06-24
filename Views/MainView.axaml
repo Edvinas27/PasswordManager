@@ -4,8 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
-        x:Class="PasswordManager.MainView"
+        x:Class="PasswordManager.Views.MainView"
         xmlns:vm="clr-namespace:PasswordManager.ViewModels"
+        xmlns:views="clr-namespace:PasswordManager.Views"
         x:DataType="vm:MainViewModel"
         Title="PasswordManager">
         
@@ -13,25 +14,28 @@
         
         
         <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto, *">
-                <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+                
+                <ContentControl Grid.Column="1" Foreground="Black" Content="{Binding CurrentPage}"></ContentControl>
+                
+                <Border Grid.Column="0" Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
                         <Grid RowDefinitions="*, Auto">
                                 <StackPanel Spacing="12">
                                         <Image PointerPressed="InputElement_OnPointerPressed" Source="{Binding MainImage}" Width="{Binding MainImageWidth}"></Image>
                                         
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding FavouriteIsActive}" Command="{Binding GoToFavouritesPage}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe46a;"></Label>
                                                         <Label Content="Favorites" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                         
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding PasswordsIsActive}" Command="{Binding GoToPasswordPage}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe2d6;"></Label>
                                                         <Label Content="Passwords" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding PaymentCardsIsActive}" Command="{Binding GoToPaymentCardPageCommand}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe5fa;"></Label>
                                                         <Label Content="Credit Cards" IsVisible="{Binding SideMenuExpanded}"></Label>

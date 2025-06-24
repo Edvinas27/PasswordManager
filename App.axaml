@@ -1,8 +1,16 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="PasswordManager.App"
+             xmlns:local="clr-namespace:PasswordManager"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+    
+    
+    <!-- This is same as app.axaml.cs line 13 -->
+    
+    <!-- <Application.DataTemplates> -->
+    <!--     <local:ViewLocator></local:ViewLocator> -->
+    <!-- </Application.DataTemplates> -->
+    
 
     <Application.Styles>
         <FluentTheme />
@@ -18,6 +26,7 @@
         <SolidColorBrush x:Key="PrimaryBackground">#F8F8FF</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryTextColor">#000000</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryButtonBackground">#c7c7ff</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryButtonActiveBackground">#fffff8</SolidColorBrush>
         
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">
             <GradientStop Offset="0" Color="#a3a3f5"></GradientStop>

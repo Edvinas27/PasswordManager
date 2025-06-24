@@ -1,35 +1,37 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Design.PreviewWith>
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PasswordManager.ViewModels"
+        x:DataType="vm:MainViewModel">
+        <Design.PreviewWith>
+                <!-- Add Object You Wish To Style here -->
         
-        <!-- Add Object You Wish To Style here -->
-        
-        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Grid.Column="0" Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
                         <Grid RowDefinitions="*, Auto">
                                 <StackPanel Spacing="12">
+                                        <Image Source="{Binding MainImage}" Width="{Binding MainImageWidth}"></Image>
                                         
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding FavouriteIsActive}" Command="{Binding GoToFavouritesPage}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe46a;"></Label>
-                                                        <Label Content="Favorites"></Label>
+                                                        <Label Content="Favorites" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                         
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding PasswordsIsActive}" Command="{Binding GoToPasswordPage}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe2d6;"></Label>
-                                                        <Label Content="Passwords"></Label>
+                                                        <Label Content="Passwords" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
-                                        <Button HorizontalAlignment="Stretch">
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding PaymentCardsIsActive}" Command="{Binding GoToPaymentCardPageCommand}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe5fa;"></Label>
-                                                        <Label Content="Payment Cards"></Label>
+                                                        <Label Content="Credit Cards" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                 </StackPanel>
                                 <Button Grid.Row="1" Classes="transparent">
-                                        <Label Classes="icon" Content="&#xe270;"></Label>
+                                        <Label Classes="icon" Content="&#xe270;" FontSize="24"></Label>
                                 </Button>
                         </Grid>
                 </Border>
@@ -38,11 +40,16 @@
     
     <!-- Buttons -->
     
+    
     <Style Selector="Button">
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
         <Setter Property="CornerRadius" Value="6,6,12,0" />
+    </Style>
+    
+    <Style Selector="Button.active /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PrimaryButtonActiveBackground}"></Setter>
     </Style>
     
     <!-- /template/ ContentPresenter is used to style the content of the button, not the actual button -->
