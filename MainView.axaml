@@ -4,33 +4,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
-        x:Class="PasswordManager.MainWindow"
+        x:Class="PasswordManager.MainView"
+        xmlns:vm="clr-namespace:PasswordManager.ViewModels"
+        x:DataType="vm:MainViewModel"
         Title="PasswordManager">
         
+        <Design.DataContext><vm:MainViewModel></vm:MainViewModel></Design.DataContext>
         
-        <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200, *">
+        
+        <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto, *">
                 <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
                         <Grid RowDefinitions="*, Auto">
                                 <StackPanel Spacing="12">
-                                        <Image Source="Assets/Images/MainLogo.png" Width="220"></Image>
+                                        <Image PointerPressed="InputElement_OnPointerPressed" Source="{Binding MainImage}" Width="{Binding MainImageWidth}"></Image>
                                         
                                         <Button HorizontalAlignment="Stretch">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe46a;"></Label>
-                                                        <Label Content="Favorites"></Label>
+                                                        <Label Content="Favorites" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                         
                                         <Button HorizontalAlignment="Stretch">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe2d6;"></Label>
-                                                        <Label Content="Passwords"></Label>
+                                                        <Label Content="Passwords" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                         <Button HorizontalAlignment="Stretch">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe5fa;"></Label>
-                                                        <Label Content="Payment Cards"></Label>
+                                                        <Label Content="Credit Cards" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
                                 </StackPanel>

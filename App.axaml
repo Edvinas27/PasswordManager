@@ -17,6 +17,7 @@
         
         <SolidColorBrush x:Key="PrimaryBackground">#F8F8FF</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryTextColor">#000000</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryButtonBackground">#c7c7ff</SolidColorBrush>
         
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">
             <GradientStop Offset="0" Color="#a3a3f5"></GradientStop>
