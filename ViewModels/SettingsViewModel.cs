@@ -6,32 +6,25 @@ namespace PasswordManager.ViewModels;
 
 public partial class SettingsViewModel : PageViewModel
 {
-    [ObservableProperty] private AutoLockTimeOptions? _selectedAutoLockTime;
-
-    public ObservableCollection<AutoLockTimeOptions> AutoLockTimeOptions { get; } =
-    [
-        new AutoLockTimeOptions(1),
-        new AutoLockTimeOptions(5),
-        new AutoLockTimeOptions(10),
-        new AutoLockTimeOptions(15),
-        new AutoLockTimeOptions(30)
-    ];
+    [ObservableProperty] private AutoLockTimeOption? _selectedAutoLockTime;
 
     public SettingsViewModel()
     {
         PageName = ApplicationPageNames.Settings;
         SelectedAutoLockTime = AutoLockTimeOptions[1];
     }
+
+    public ObservableCollection<AutoLockTimeOption> AutoLockTimeOptions { get; } =
+    [
+        new(1),
+        new(5),
+        new(10),
+        new(15),
+        new(30)
+    ];
 }
 
-public class AutoLockTimeOptions
+public record AutoLockTimeOption(int Minutes)
 {
-    public int Minutes { get; }
-    public string DisplayText { get; }
-
-    public AutoLockTimeOptions(int minutes)
-    {
-        Minutes = minutes;
-        DisplayText = minutes == 1 ? "1 minutes" : $"{minutes} minutes";
-    }
+    public string DisplayText => Minutes == 1 ? "1 minute" : $"{Minutes} minutes";
 }

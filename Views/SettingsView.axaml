@@ -32,7 +32,7 @@
                             <!-- License -->
                             <StackPanel>
                                 <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Check your license status and verify if you're eligible for updates."></TextBlock>
-                                <TextBlock Foreground="IndianRed" Text="Contact support for any questions regarding your license."></TextBlock>
+                                <TextBlock Foreground="{DynamicResource SettingsSecondaryTextColor}" Text="Contact support for any questions regarding your license."></TextBlock>
                             </StackPanel>
                             <Button Grid.Row="0" Grid.Column="1" Classes="Settings">
                                 <StackPanel Orientation="Horizontal">
@@ -41,7 +41,10 @@
                                 </StackPanel>
                             </Button>
                             <!-- Reset Password -->
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Reset your manager secret key."></TextBlock>
+                            <StackPanel Grid.Row="1" Grid.Column="0">
+                                <TextBlock Text="Reset your manager secret key."></TextBlock>
+                                <TextBlock Foreground="{DynamicResource SettingsSecondaryTextColor}" Text="Requires enabled Two-Factor Authentication"></TextBlock>
+                            </StackPanel>
                             <Button Grid.Row="1" Grid.Column="1" Classes="Settings">
                                 <StackPanel Orientation="Horizontal">
                                     <Label Classes="icon" Content="&#xe4c2;"></Label>
@@ -49,8 +52,11 @@
                                 </StackPanel>
                             </Button>
                             <!-- Auto lock -->
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Configure Password Manager auto lock."></TextBlock>
-                            <ComboBox Grid.Row="2" Grid.Column="1" Width="128" ItemsSource="{Binding AutoLockTimeOptions}" SelectedItem="{Binding SelectedAutoLockTime}">
+                            <StackPanel Grid.Row="2" Grid.Column="0">
+                                <TextBlock Text="Configure Password Manager auto lock."></TextBlock>
+                                <TextBlock Foreground="{DynamicResource SettingsSecondaryTextColor}" Text="Manager locks itself after set minutes."></TextBlock>
+                            </StackPanel>
+                            <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding AutoLockTimeOptions}" SelectedItem="{Binding SelectedAutoLockTime}">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding DisplayText}"></TextBlock>
