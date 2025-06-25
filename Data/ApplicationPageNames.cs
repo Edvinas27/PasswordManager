@@ -6,4 +6,5 @@ public enum ApplicationPageNames
     Favourites,
     Passwords,
     PaymentCards,
+    Settings
 }

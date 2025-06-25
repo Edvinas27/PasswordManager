@@ -10,7 +10,7 @@
                                 <StackPanel Spacing="12">
                                         <Image Source="{Binding MainImage}" Width="{Binding MainImageWidth}"></Image>
                                         
-                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding FavouriteIsActive}" Command="{Binding GoToFavouritesPage}">
+                                        <Button HorizontalAlignment="Stretch" Classes="Settings" Command="{Binding GoToFavouritesPage}">
                                                 <StackPanel Orientation="Horizontal">
                                                         <Label Classes="icon" Content="&#xe46a;"></Label>
                                                         <Label Content="Favorites" IsVisible="{Binding SideMenuExpanded}"></Label>
@@ -46,6 +46,15 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
         <Setter Property="CornerRadius" Value="6,6,12,0" />
+    </Style>
+    
+    <Style Selector="Button.Settings">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
+            <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
+            <Setter Property="Width" Value="128"></Setter>
+            <Setter Property="Height" Value="36"></Setter>
+            <Setter Property="CornerRadius" Value="6,6,6,6" />
     </Style>
     
     <Style Selector="Button.active /template/ ContentPresenter">

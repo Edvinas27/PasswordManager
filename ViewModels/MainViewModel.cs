@@ -21,6 +21,7 @@ public partial class MainViewModel : ViewModelBase
     public bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
     public bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
     public bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
+    public bool SettingsIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
 
 
     public int MainImageWidth => SideMenuExpanded ? 180 : 40;
@@ -30,6 +31,11 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(PasswordsIsActive))]
     [NotifyPropertyChangedFor(nameof(PaymentCardsIsActive))]
     private PageViewModel _currentPage;
+
+    public MainViewModel()
+    {
+        CurrentPage = new SettingsViewModel();
+    }
     
     public MainViewModel(PageFactory pageFactory)
     {
@@ -53,4 +59,7 @@ public partial class MainViewModel : ViewModelBase
 
     [RelayCommand]
     public void GoToPaymentCardPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.PaymentCards);
+    
+    [RelayCommand]
+    public void GoToSettingsPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Settings);
 }

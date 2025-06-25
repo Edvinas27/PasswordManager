@@ -25,6 +25,7 @@ public partial class App : Application
         collection.AddTransient<FavouritesViewModel>();
         collection.AddTransient<PasswordsViewModel>();
         collection.AddTransient<PaymentCardViewModel>();
+        collection.AddTransient<SettingsViewModel>();
         
         collection.AddSingleton<PageFactory>();
         collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
@@ -32,6 +33,7 @@ public partial class App : Application
             ApplicationPageNames.Favourites => x.GetRequiredService<FavouritesViewModel>(),
             ApplicationPageNames.PaymentCards => x.GetRequiredService<PaymentCardViewModel>(),
             ApplicationPageNames.Passwords => x.GetRequiredService<PasswordsViewModel>(),
+            ApplicationPageNames.Settings => x.GetRequiredService<SettingsViewModel>(),
             _ => throw new InvalidOperationException()
         });
         
