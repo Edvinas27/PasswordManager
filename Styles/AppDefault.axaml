@@ -5,14 +5,11 @@
     <Design.PreviewWith>
         <!-- Add Object You Wish To Style here -->
         <Border Padding="20">
-            <StackPanel>
-                <TextBlock Text="Configure Password Manager auto lock." />
-                <ComboBox Width="128">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate />
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </StackPanel>
+            
+            <Button Width="512">
+                    <Label Classes="icon" Content="&#xe3d4;" HorizontalAlignment="Center"></Label>
+            </Button>
+            
         </Border>
 
     </Design.PreviewWith>
@@ -44,6 +41,12 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
         <Setter Property="CornerRadius" Value="6,6,12,0" />
+    </Style>
+    
+    <Style Selector="Button.Add /template/ ContentControl">
+        <Setter Property="FontSize" Value="24"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryButtonBackground}"></Setter>
+        <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}"></Setter>
     </Style>
 
     <Style Selector="Button.Settings">
