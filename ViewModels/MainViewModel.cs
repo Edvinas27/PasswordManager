@@ -30,6 +30,7 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(FavouriteIsActive))]
     [NotifyPropertyChangedFor(nameof(PasswordsIsActive))]
     [NotifyPropertyChangedFor(nameof(PaymentCardsIsActive))]
+    [NotifyPropertyChangedFor(nameof(SettingsIsActive))]
     private PageViewModel _currentPage;
 
     public MainViewModel()

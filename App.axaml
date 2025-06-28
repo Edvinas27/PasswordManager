@@ -19,24 +19,29 @@
     </Application.Styles>
              
     <Application.Resources>
-        
         <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
         <FontFamily x:Key="Phosphor-Fill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
         <FontFamily x:Key="Akko Pro Regular">/Assets/Fonts/Akko Pro Regular.ttf#Akko Pro</FontFamily>
-        
-        <SolidColorBrush x:Key="PrimaryBackground">#F8F8FF</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryTextColor">#000000</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryButtonBackground">#c7c7ff</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryButtonActiveBackground">#fffff8</SolidColorBrush>
-        <SolidColorBrush x:Key="SettingsHeaderBackground">#cbcbf6</SolidColorBrush>
+
+        <SolidColorBrush x:Key="PrimaryBackground">#E0E8F0</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryTextColor">#2c3e50</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryButtonBackground">#9CCCFF</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryButtonActiveBackground">#7BB8FF</SolidColorBrush>
+        <SolidColorBrush x:Key="SettingsHeaderBackground">#ADD3FF</SolidColorBrush>
         <SolidColorBrush x:Key="SettingsSecondaryTextColor">IndianRed</SolidColorBrush>
-        
+        <SolidColorBrush x:Key="PrimaryBorder">#C0CCE0</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryHoverBackground">#8BC1FF</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryHoverForeground">#2c3e50</SolidColorBrush>
+
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">
-            <GradientStop Offset="0" Color="#a3a3f5"></GradientStop>
-            <GradientStop Offset="1" Color="#cbcbf6"></GradientStop>
+            <GradientStop Offset="0" Color="#5B99E0"/>
+            <GradientStop Offset="1" Color="#B4CCE9"/>
         </LinearGradientBrush>
-        
-        <SolidColorBrush x:Key="PrimaryHoverBackground">#EBEBFF</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryHoverForeground">#000000</SolidColorBrush>
+
+        <LinearGradientBrush x:Key="PrimaryBackgroundGradientMiddle" StartPoint="0%, 0%" EndPoint="100%, 0%">
+            <GradientStop Offset="0" Color="#B4CCE9"/>
+            <GradientStop Offset="0.5" Color="#5B99E0"/>
+            <GradientStop Offset="1" Color="#B4CCE9"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>

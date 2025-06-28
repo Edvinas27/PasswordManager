@@ -19,7 +19,7 @@
                 <ContentControl Grid.Column="1" Foreground="Black" Content="{Binding CurrentPage}"></ContentControl>
                 
                 <Border Grid.Column="0" Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
-                        <Grid RowDefinitions="*, Auto">
+                        <Grid RowDefinitions="*, auto">
                                 <StackPanel Spacing="12">
                                         <Image PointerPressed="InputElement_OnPointerPressed" Source="{Binding MainImage}" Width="{Binding MainImageWidth}"></Image>
                                         
@@ -42,10 +42,13 @@
                                                         <Label Content="Credit Cards" IsVisible="{Binding SideMenuExpanded}"></Label>
                                                 </StackPanel>
                                         </Button>
+                                        <Button HorizontalAlignment="Stretch" Classes.active="{Binding SettingsIsActive}" Command="{Binding GoToSettingsPageCommand}">
+                                                <StackPanel Orientation="Horizontal">
+                                                        <Label Classes="icon" Content="&#xe270;"></Label>
+                                                        <Label Content="Settings" IsVisible="{Binding SideMenuExpanded}"></Label>
+                                                </StackPanel>
+                                        </Button>
                                 </StackPanel>
-                                <Button Grid.Row="1" Classes="transparent" Command="{Binding GoToSettingsPageCommand}">
-                                        <Label Classes="icon" Content="&#xe270;" FontSize="24"></Label>
-                                </Button>
                         </Grid>
                 </Border>
         </Grid>

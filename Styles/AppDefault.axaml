@@ -13,6 +13,13 @@
         </Border>
 
     </Design.PreviewWith>
+    
+    
+    <!-- DataGrid -->
+    
+    <Style Selector="DataGridCell">
+        <Setter Property="Padding" Value="12"></Setter>
+    </Style>
 
 
     <!-- Combo Boxes -->
@@ -27,9 +34,28 @@
         <Setter Property="CornerRadius" Value="6,6,6,6" />
     </Style>
     
-    <Style Selector="ComboBox:pointerover /template/ ContentPresenter">
+    <Style Selector="ComboBox:pointerover /template/ Border">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
+    </Style>
+    
+    
+    <Style Selector="ComboBox:pointerover">
         <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverForeground}"></Setter>
+    </Style>
+    
+    <Style Selector="ComboBoxItem">
+        <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}"></Setter>
+        <Setter Property="Padding" Value="8"></Setter>
+    </Style>
+    
+    <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverForeground}"></Setter>
+    </Style>
+    
+    <Style Selector="ComboBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryButtonActiveBackground}"></Setter>
     </Style>
 
 
@@ -40,13 +66,17 @@
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
-        <Setter Property="CornerRadius" Value="6,6,12,0" />
+        <Setter Property="CornerRadius" Value="6,6,6,6" />
     </Style>
     
-    <Style Selector="Button.Add /template/ ContentControl">
+    <Style Selector="Button.NoCorner /template/ ContentControl">
         <Setter Property="FontSize" Value="24"></Setter>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryButtonBackground}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}"></Setter>
+    </Style>
+    
+    <Style Selector="Button.NoCorner">
+        <Setter Property="CornerRadius" Value="4"></Setter>
     </Style>
 
     <Style Selector="Button.Settings">
@@ -98,11 +128,22 @@
         <!-- These margins are because phosphor icons are idiots and violated standards when designing fonts -->
         <Setter Property="Margin" Value="0,1,0,0" />
     </Style>
+    
+    <Style Selector="Label">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
+    </Style>
 
-    <!-- -->
+    <!-- Window -->
 
     <Style Selector="Window">
         <Setter Property="FontFamily" Value="{DynamicResource 'Akko Pro Regular'}" />
+    </Style>
+    
+    
+    <!-- Text Block -->
+    
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
     </Style>
 
 

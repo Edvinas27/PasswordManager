@@ -12,7 +12,7 @@
     
     <Grid RowDefinitions="Auto, *">
         <!-- Header -->
-        <Grid Grid.Row="0" Background="{DynamicResource SettingsHeaderBackground}">
+        <Grid Grid.Row="0" Background="{DynamicResource PrimaryBackgroundGradientMiddle}">
             <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="-8">
                 <Label HorizontalAlignment="Center" FontSize="48" Content="Settings"></Label>
                 <Label HorizontalAlignment="Center" Content="Version 0.0.1 Beta"></Label>
