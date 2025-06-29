@@ -11,8 +11,6 @@ namespace PasswordManager.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    private readonly PageFactory _pageFactory;
-    
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(MainImage))]
     [NotifyPropertyChangedFor(nameof(MainImageWidth))]
@@ -32,7 +30,10 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(PaymentCardsIsActive))]
     [NotifyPropertyChangedFor(nameof(SettingsIsActive))]
     private PageViewModel _currentPage;
+    private readonly PageFactory _pageFactory;
 
+
+    //This is used for mainview.axaml design datacontext.
     public MainViewModel()
     {
         CurrentPage = new SettingsViewModel();

@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace PasswordManager.Views;
 
-public partial class PaymentCardView : UserControl
+public partial class PaymentCardsView : UserControl
 {
-    public PaymentCardView()
+    public PaymentCardsView()
     {
         InitializeComponent();
     }

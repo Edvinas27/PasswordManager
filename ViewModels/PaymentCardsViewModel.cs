@@ -2,9 +2,9 @@ using PasswordManager.Data;
 
 namespace PasswordManager.ViewModels;
 
-public class PaymentCardViewModel : PageViewModel
+public class PaymentCardsViewModel : PageViewModel
 {
-    public PaymentCardViewModel()
+    public PaymentCardsViewModel()
     {
         PageName = ApplicationPageNames.PaymentCards;
     }
