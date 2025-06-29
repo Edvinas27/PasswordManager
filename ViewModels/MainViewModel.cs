@@ -1,5 +1,4 @@
 using System;
-using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -16,10 +15,10 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(MainImageWidth))]
     private bool _sideMenuExpanded = true;
 
-    public bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
-    public bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
-    public bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
-    public bool SettingsIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
+    private bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
+    private bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
+    private bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
+    private bool SettingsIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
 
 
     public int MainImageWidth => SideMenuExpanded ? 180 : 40;
@@ -54,14 +53,14 @@ public partial class MainViewModel : ViewModelBase
     private void SideMenuResize() => SideMenuExpanded = !SideMenuExpanded;
 
     [RelayCommand]
-    public void GoToFavouritesPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Favourites);
+    internal void GoToFavouritesPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Favourites);
     
     [RelayCommand]
-    public void GoToPasswordPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Passwords);
+    internal void GoToPasswordPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Passwords);
 
     [RelayCommand]
-    public void GoToPaymentCardPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.PaymentCards);
+    internal void GoToPaymentCardPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.PaymentCards);
     
     [RelayCommand]
-    public void GoToSettingsPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Settings);
+    internal void GoToSettingsPage() => CurrentPage = _pageFactory.Create(ApplicationPageNames.Settings);
 }

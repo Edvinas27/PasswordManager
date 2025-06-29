@@ -6,7 +6,8 @@ namespace PasswordManager.ViewModels;
 
 public partial class SettingsViewModel : PageViewModel
 {
-    [ObservableProperty] private AutoLockTimeOption? _selectedAutoLockTime;
+    [ObservableProperty] 
+    private AutoLockTimeOption? _selectedAutoLockTime;
 
     public SettingsViewModel()
     {

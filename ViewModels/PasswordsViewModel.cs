@@ -1,13 +1,19 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PasswordManager.Data;
 
 namespace PasswordManager.ViewModels;
 
-public  class PasswordsViewModel : PageViewModel
+public partial class PasswordsViewModel : PageViewModel
 {
     public ObservableCollection<Password> Passwords { get; }
+
+    [ObservableProperty] 
+    [NotifyPropertyChangedFor(nameof(HasSelectedPassword))]
+    private Password? _selectedPassword;
+    
     
     public PasswordsViewModel()
     {
@@ -32,11 +38,31 @@ public  class PasswordsViewModel : PageViewModel
             new Password("Admin Panel", "adminPanel987!"),
             new Password("API Key", "asdf"),
         };
-        
         Passwords = new ObservableCollection<Password>(passwords);
     }
+    
+    
+    [RelayCommand]
+    private void FavouritePassword()
+    {
+        if (SelectedPassword is not null)
+        {
+            SelectedPassword.IsFavourite = !SelectedPassword.IsFavourite;
+        }
+    }
+    
+    public bool HasSelectedPassword => SelectedPassword is not null;
 }
 
-public record Password(string Name, string Value, bool IsFavourite = false)
+public partial class Password(string name, string value, bool isFavourite = false) : ObservableObject
 {
+
+    [ObservableProperty]
+    private string _name = name;
+
+    [ObservableProperty]
+    private string _value = value;
+
+    [ObservableProperty]
+    private bool _isFavourite = isFavourite;
 }
