@@ -131,7 +131,7 @@
     <Style Selector="Label">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
     </Style>
-    
+        
     <Style Selector="Label.favorite-icon[Tag=true]">
         <Setter Property="Foreground" Value="#FFB700"></Setter>
     </Style>
@@ -139,6 +139,13 @@
     <Style Selector="Label.favorite-icon[Tag=false]">
         <Setter Property="Foreground" Value="Gray"></Setter>
     </Style>
+    
+    <!-- Grid -->
+    
+    <Style Selector="Grid.selected-data Label">
+        <Setter Property="FontSize" Value="16"></Setter>
+    </Style>
+        
 
     <!-- Window -->
 

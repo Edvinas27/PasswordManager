@@ -15,10 +15,10 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(MainImageWidth))]
     private bool _sideMenuExpanded = true;
 
-    private bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
-    private bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
-    private bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
-    private bool SettingsIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
+    internal bool FavouriteIsActive => CurrentPage.PageName == ApplicationPageNames.Favourites;
+    internal bool PasswordsIsActive => CurrentPage.PageName == ApplicationPageNames.Passwords;
+    internal bool PaymentCardsIsActive => CurrentPage.PageName == ApplicationPageNames.PaymentCards;
+    internal bool SettingsIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
 
 
     public int MainImageWidth => SideMenuExpanded ? 180 : 40;
