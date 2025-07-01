@@ -39,6 +39,14 @@
         <SolidColorBrush x:Key="WeakPasswordColour">#FFA64D</SolidColorBrush>
         <SolidColorBrush x:Key="StrongPasswordColour">#47B847</SolidColorBrush>
         <SolidColorBrush x:Key="VeryStrongPasswordColour">#2D862D</SolidColorBrush>
+        
+        <SolidColorBrush x:Key="AcceptAddButtonBackground">#47B847</SolidColorBrush>
+        <SolidColorBrush x:Key="AcceptButtonHoverBackground">#389C38</SolidColorBrush>
+        <SolidColorBrush x:Key="AcceptButtonPressedBackground">#2C7A2C</SolidColorBrush>
+
+        <SolidColorBrush x:Key="CancelButtonBackground">#FF4D4D</SolidColorBrush>
+        <SolidColorBrush x:Key="CancelButtonHoverBackground">#E64545</SolidColorBrush>
+        <SolidColorBrush x:Key="CancelButtonPressedBackground">#B33636</SolidColorBrush>
 
 
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">

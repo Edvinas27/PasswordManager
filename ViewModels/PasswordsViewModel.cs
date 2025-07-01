@@ -6,6 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 using PasswordManager.Data;
 using PasswordManager.Extensions;
 using PasswordManager.Helpers;
+using PasswordManager.Models;
 
 namespace PasswordManager.ViewModels;
 
@@ -16,6 +17,7 @@ public partial class PasswordsViewModel : PageViewModel
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(HasSelectedPassword))]
     private Password? _selectedPassword;
+    
     
     
     public PasswordsViewModel()
@@ -57,30 +59,4 @@ public partial class PasswordsViewModel : PageViewModel
     
     public bool HasSelectedPassword => SelectedPassword is not null;
     public bool SelectedPasswordHasWebsite => SelectedPassword?.Website is not null;
-}
-
-// make datetime required for contr, this is jsut for easy testing.
-public partial class Password : ObservableObject
-{
-
-    public string Name { get; init; }
-    public string Website { get; init; }
-    public DateTime LastModified { get; init; }
-
-    [ObservableProperty]
-    private string _value;
-
-    [ObservableProperty]
-    private bool _isFavourite;
-
-    public Password(string name, string value, string website = null!, bool isFavourite = false)
-    {
-        Name = name;
-        Website = website;
-        LastModified = DateTime.Now;
-        _value = value;
-        _isFavourite = isFavourite;
-    }
-
-    public string Strength => PasswordHelper.CalculateEntropy(Value).ToDisplayString();
 }

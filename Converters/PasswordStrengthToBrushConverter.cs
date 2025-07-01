@@ -20,6 +20,7 @@ public class PasswordStrengthToBrushConverter : IMultiValueConverter
             return null;
         }
 
+        //we want this t only work with labels.
         if (values[1] is not Label data) return null;
 
         var content = data.Content?.ToString()?.RemoveSpaces();

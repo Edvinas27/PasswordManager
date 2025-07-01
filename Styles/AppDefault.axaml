@@ -86,7 +86,18 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
         <Setter Property="CornerRadius" Value="6,6,6,6" />
     </Style>
-
+    
+    <Style Selector="Button.Dialog">
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Height" Value="36"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackground}" />
+        <Setter Property="CornerRadius" Value="6,6,6,6" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+    </Style>
+    
     <Style Selector="Button.active /template/ ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonActiveBackground}" />
     </Style>

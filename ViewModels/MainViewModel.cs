@@ -31,6 +31,9 @@ public partial class MainViewModel : ViewModelBase
     private PageViewModel _currentPage;
     private readonly PageFactory _pageFactory;
 
+    [ObservableProperty]
+    private DialogViewModel _currentDialog;
+
 
     //This is used for mainview.axaml design datacontext.
     public MainViewModel()
