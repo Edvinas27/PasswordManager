@@ -170,6 +170,38 @@
     <Style Selector="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
     </Style>
+    
+    <!--  Text Box -->
+    
+    <Style Selector="TextBox">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBorder}"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="CaretBrush" Value="Black"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox:focus">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox:pointerover /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox:pointerover /template/ Border">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"></Setter>
+        <Setter Property="BorderBrush" Value="Black"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox:focus /template/ Border">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"></Setter>
+        <Setter Property="BorderBrush" Value="Black"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox:focus /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"></Setter>
+    </Style>
+    
 
 
 </Styles>

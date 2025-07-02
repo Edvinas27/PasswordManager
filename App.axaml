@@ -26,6 +26,7 @@
         <FontFamily x:Key="Akko Pro Regular">/Assets/Fonts/Akko Pro Regular.ttf#Akko Pro</FontFamily>
 
         <SolidColorBrush x:Key="PrimaryBackground">#E0E8F0</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryBackgroundLight">#E8EEF5</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryTextColor">#2c3e50</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryButtonBackground">#9CCCFF</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryButtonActiveBackground">#7BB8FF</SolidColorBrush>

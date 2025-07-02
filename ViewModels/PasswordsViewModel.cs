@@ -6,20 +6,21 @@ using CommunityToolkit.Mvvm.Input;
 using PasswordManager.Data;
 using PasswordManager.Extensions;
 using PasswordManager.Helpers;
+using PasswordManager.Interfaces;
 using PasswordManager.Models;
 
 namespace PasswordManager.ViewModels;
 
-public partial class PasswordsViewModel : PageViewModel
+public partial class PasswordsViewModel : PageViewModel, IDialogProvider
 {
     public ObservableCollection<Password> Passwords { get; }
 
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(HasSelectedPassword))]
     private Password? _selectedPassword;
-    
-    
-    
+
+    [ObservableProperty] 
+    private DialogViewModel _dialog;
     public PasswordsViewModel()
     {
         PageName = ApplicationPageNames.Passwords;
@@ -55,6 +56,12 @@ public partial class PasswordsViewModel : PageViewModel
         {
             SelectedPassword.IsFavourite = !SelectedPassword.IsFavourite;
         }
+    }
+
+    [RelayCommand]
+    private void ShowDialog()
+    {
+        Dialog = new DialogViewModel { IsOpen = true };
     }
     
     public bool HasSelectedPassword => SelectedPassword is not null;

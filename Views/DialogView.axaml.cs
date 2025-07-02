@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace PasswordManager.Views;
 
-public partial class AddDataView : UserControl
+public partial class DialogView : UserControl
 {
-    public AddDataView()
+    public DialogView()
     {
         InitializeComponent();
     }

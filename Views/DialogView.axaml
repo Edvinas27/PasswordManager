@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="540"
              xmlns:vm="clr-namespace:PasswordManager.ViewModels"
-             x:DataType="vm:AddDataViewModel"
-             x:Class="PasswordManager.Views.AddDataView">
-    
-    <Design.DataContext><vm:AddDataViewModel/></Design.DataContext>
+             x:DataType="vm:DialogViewModel"
+             x:Class="PasswordManager.Views.DialogView">
     
     
-    <Border Background="{DynamicResource PrimaryBackground}">
+    <Design.DataContext><vm:DialogViewModel/></Design.DataContext>
+    
+    
+    <Border Background="{DynamicResource PrimaryBackground}" Width="300" Height="540" CornerRadius="16">
         <StackPanel Margin="20" Spacing="12">
             <StackPanel>
                 <Label Content="Name*" FontSize="18"></Label>
@@ -20,15 +21,18 @@
                 <Label Content="Password*" FontSize="18"></Label>
                 <TextBox Watermark="Enter the password" PasswordChar="*" ></TextBox>
             </StackPanel>
-
+            <StackPanel>
+                <Label Content="Confirm Password*" FontSize="18"></Label>
+                <TextBox Watermark="Enter the password" PasswordChar="*" ></TextBox>
+            </StackPanel>
             <StackPanel>
                 <Label Content="Website" FontSize="18"></Label>
                 <TextBox Watermark="Enter the website"></TextBox>
             </StackPanel>
             
             <Grid ColumnDefinitions="*,*" Margin="0,16,0,0" ColumnSpacing="12">
-                <Button Grid.Column="0" Classes="Dialog" Content="Accept" Background="{DynamicResource AcceptButtonBackground}"></Button>
-                <Button Grid.Column="1" Classes="Dialog" Content="Cancel" Background="{DynamicResource CancelButtonBackground}"></Button>
+                <Button Grid.Column="0" Classes="Dialog" Content="Accept" Command="{Binding AddCommand}"></Button>
+                <Button Grid.Column="1" Classes="Dialog" Content="Cancel" Command="{Binding CancelCommand}"></Button>
             </Grid>
             
         </StackPanel>
